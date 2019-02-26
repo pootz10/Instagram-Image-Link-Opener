@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Instagram Image Link Opener
-// @namespace   pootz
+// @namespace   pootz10
 // @description Allow You Open Instagram Image On Another Tab Left Clicking it
 // @include     https://www.instagram.com/*
 // @include     http://www.instagram.com/*
