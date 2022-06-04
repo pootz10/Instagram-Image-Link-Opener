@@ -6,8 +6,9 @@
 // @include     http://www.instagram.com/*
 // @include     https://instagram.com/*
 // @include     http://instagram.com/*
-// @version     1.2
-// @history     v1.2 when it has multiple images on a post and the tab is not active script may not find the image link
+// @version     1.3
+// @history     v1.3 instagram changed class name
+// @history     v1.2 Bug fix when it has multiple images on a post
 // @history     v1.1 Update IG source code
 // @license     MIT
 // @require     https://code.jquery.com/jquery-2.2.3.min.js
@@ -18,8 +19,11 @@
 // @run-at      document-end
 // ==/UserScript==
 
-waitForKeyElements("div.KL4Bh img", clickableImage, false);
+//v1.2
+//waitForKeyElements("div.KL4Bh img", clickableImage, false);
 
+//v1.3
+waitForKeyElements("div._aagv img", clickableImage, false);
 
 function clickableImage (jNode) {
 
@@ -27,11 +31,16 @@ function clickableImage (jNode) {
          var jThis = $(this);
          var imgLink = jThis.prop ("src");
 
-         jThis.parent().parent().find("._9AhH0").on( "click", function() {
+         //v1.2
+         //jThis.parent().parent().find("._9AhH0").on( "click", function() {
+
+         //v1.3
+         jThis.parent().parent().find("._aagw").on( "click", function() {
 
              GM_openInTab(imgLink);
 
          });
+
 
      } );
 
