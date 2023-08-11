@@ -6,7 +6,8 @@
 // @include     http://www.instagram.com/*
 // @include     https://instagram.com/*
 // @include     http://instagram.com/*
-// @version     1.3
+// @version     1.4
+// @history     v1.4 fix for instagram changes
 // @history     v1.3 instagram changed class name
 // @history     v1.2 Bug fix when it has multiple images on a post
 // @history     v1.1 Update IG source code
@@ -35,7 +36,10 @@ function clickableImage (jNode) {
          //jThis.parent().parent().find("._9AhH0").on( "click", function() {
 
          //v1.3
-         jThis.parent().parent().find("._aagw").on( "click", function() {
+         //jThis.parent().parent().find("._aagw").on( "click", function() {
+
+         //v1.4
+         jThis.on( "click", function() {
 
              GM_openInTab(imgLink);
 
